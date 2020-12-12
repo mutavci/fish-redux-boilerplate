@@ -1,9 +1,10 @@
 import 'package:json_annotation/json_annotation.dart';
+
 @JsonSerializable()
 class Post {
-  Post({this.UserId, this.id, this.title,this.body});
+  Post({this.userId, this.id, this.title, this.body});
 
-  int UserId;
+  int userId;
   int id;
   String title;
   String body;
@@ -12,17 +13,18 @@ class Post {
 
   Map<String, dynamic> toJson() => _$PostToJson(this);
 }
+
 Post _$PostFromJson(Map<String, dynamic> json) {
   return Post(
-      UserId: json['PostId'] as int,
+      userId: json['PostId'] as int,
       id: json['id'] as int,
       title: json['title'] as String,
       body: json['body'] as String);
 }
 
 Map<String, dynamic> _$PostToJson(Post instance) => <String, dynamic>{
-  'PostId':instance.UserId,
-  'id': instance.id,
-  'title': instance.title,
-  'body': instance.body
-};
+      'PostId': instance.userId,
+      'id': instance.id,
+      'title': instance.title,
+      'body': instance.body
+    };

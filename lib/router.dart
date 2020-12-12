@@ -8,27 +8,26 @@ class Routes {
   static final PageRoutes routes = PageRoutes(
     pages: <String, Page<Object, dynamic>>{
       'dashboard': DashboardPage(),
-      'posts':PostsPage()
+      'posts': PostsPage()
     },
     visitor: (String path, Page<Object, dynamic> page) {
       if (page.isTypeof<GlobalBaseState>()) {
         page.connectExtraStore<GlobalState>(GlobalStore.store,
-                (Object pagestate, GlobalState appState) {
-              final GlobalBaseState p = pagestate;
-              if (p.themeColor != appState.themeColor) {
-                if (pagestate is Cloneable) {
-                  final Object copy = pagestate.clone();
-                  final GlobalBaseState newState = copy;
-                  newState.themeColor = appState.themeColor;
-                  return newState;
-                }
-              }
-              return pagestate;
-            });
+            (Object pagestate, GlobalState appState) {
+          final GlobalBaseState p = pagestate;
+          if (p.themeColor != appState.themeColor) {
+            if (pagestate is Cloneable) {
+              final Object copy = pagestate.clone();
+              final GlobalBaseState newState = copy;
+              newState.themeColor = appState.themeColor;
+              return newState;
+            }
+          }
+          return pagestate;
+        });
       }
 
       page.enhancer.append(
-
         /// View AOP
         viewMiddleware: <ViewMiddleware<dynamic>>[
           safetyView<dynamic>(),
@@ -51,8 +50,8 @@ class Routes {
       );
     },
   );
-
 }
+
 EffectMiddleware<T> _pageAnalyticsMiddleware<T>({String tag = 'redux'}) {
   return (AbstractLogic<dynamic> logic, Store<T> store) {
     return (Effect<dynamic> effect) {

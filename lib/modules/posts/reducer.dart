@@ -1,4 +1,5 @@
 import 'package:fish_redux/fish_redux.dart';
+import 'package:fish_redux_boilerplate/modules/posts/post_component/state.dart';
 
 import 'action.dart';
 import 'state.dart';
@@ -16,9 +17,10 @@ PostsState _onAction(PostsState state, Action action) {
   final PostsState newState = state.clone();
   return newState;
 }
-PostsState _getPostAction(PostsState state, Action action) {
 
+PostsState _getPostAction(PostsState state, Action action) {
+  final List<PostState> postList = action.payload ?? <PostState>[];
   final PostsState newState = state.clone();
-  newState.postList = action.payload;
+  newState.postList = postList;
   return newState;
 }
