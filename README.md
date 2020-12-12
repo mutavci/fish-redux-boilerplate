@@ -61,7 +61,9 @@ flutter packages pub run build_runner watch
 - [ ] shared reference
 - [ ] interceptor
 - [ ] unit test
-- [ ] component
+- [X] dio
+- [X] adapter
+- [X] component
 - [X] route
 - [x] list
 

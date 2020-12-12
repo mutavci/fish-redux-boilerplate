@@ -2,7 +2,6 @@ import 'package:fish_redux/fish_redux.dart';
 import 'package:fish_redux_boilerplate/router.dart';
 import 'package:flutter/material.dart' hide Action, Page;
 
-
 Widget createApp() {
   final AbstractRoutes routes = Routes.routes;
   return MaterialApp(
@@ -19,5 +18,3 @@ Widget createApp() {
     },
   );
 }
-
-
