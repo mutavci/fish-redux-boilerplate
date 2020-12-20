@@ -1,9 +1,13 @@
 import 'package:fish_redux/fish_redux.dart';
 
-enum PostsAction { action }
+enum PostsAdapterAction { action, onRemove }
 
-class PostsActionCreator {
+class PostsAdapterActionCreator {
   static Action onAction() {
-    return const Action(PostsAction.action);
+    return Action(PostsAdapterAction.action);
+  }
+
+  static Action onRemovePost(int uniqueId) {
+    return Action(PostsAdapterAction.onRemove, payload: uniqueId);
   }
 }
