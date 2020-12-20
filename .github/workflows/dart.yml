@@ -27,15 +27,15 @@ jobs:
         java-version: '12.x'
 
     - run: flutter pub get
-      working-directory: fish_redux_boilerplate
+      working-directory: ./
     # - run: flutter test
 
     - name: build APK
       run: flutter build apk
-      working-directory: fish_redux_boilerplate
+      working-directory: ./
 
     - name: upload APK
       uses: actions/upload-artifact@v1
       with:
         name: apk
-        path: fish_redux_boilerplate/build/app/outputs/apk/release/app-release.apk
+        path: build/app/outputs/apk/release/app-release.apk
