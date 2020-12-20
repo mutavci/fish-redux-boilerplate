@@ -2,13 +2,15 @@
 
 ## **Table of Contents**
 
-* [Getting Started](#getting-started)
-* [How to Use](#how-to-use)
-* [ToDos](#todos)
-* [What is Fish Redux ?](#what-is-fish-redux-)
-* [Plugins](#plugins)
-  * [Code Template](#code-template)
-  * [Dev-Tools](#dev-tools)
+- [fish-redux-boilerplate](#fish-redux-boilerplate)
+  - [**Table of Contents**](#table-of-contents)
+  - [Getting Started](#getting-started)
+  - [How to Use](#how-to-use)
+  - [ToDos](#todos)
+  - [What is Fish Redux ?](#what-is-fish-redux-)
+  - [Plugins](#plugins)
+    - [Code Template](#code-template)
+    - [Dev-Tools](#dev-tools)
 
 
 ## Getting Started
@@ -34,7 +36,7 @@ https://github.com/mutavci/fish-redux-boilerplate.git
 Go to project root and execute the following command in console to get the required dependencies:
 
 ```
-flutter pub get 
+flutter pub get
 ```
 
 **Step 3:**
@@ -51,21 +53,24 @@ or watch command in order to keep the source code synced automatically:
 flutter packages pub run build_runner watch
 ```
 
-## ToDos
 
-- [ ] pull_to_refresh
+## ToDos
 - [ ] spinkit | loading
 - [ ] permission handler
 - [ ] localization |  intl
 - [ ] authorization
 - [ ] shared reference
-- [ ] interceptor
-- [ ] unit test
+- [X] interceptor
+- [X] pull_to_refresh
 - [X] dio
 - [X] adapter
 - [X] component
 - [X] route
 - [x] list
+
+<p>
+  <img src="/images/example.gif" alt="fish_redux_boilerplate" height="450px">
+</p>
 
 ## What is Fish Redux ?
 
